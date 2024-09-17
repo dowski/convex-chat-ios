@@ -52,19 +52,17 @@ struct ContentView: View {
     if let providedMessages = messages {
       self.messages = providedMessages
     } else {
-      Task {
-        try! await client.subscribe(name: "messages:list")
+        try! client.subscribe(name: "messages:list")
           .replaceError(with: [Message(id: "id", author: "None", body: "None")])
           .receive(on: DispatchQueue.main)
           .assign(to: \.messages, on: self)
           .store(in: &cancellationHandle)
       }
-    }
   }
 
   func sendOutgoing() {
     Task {
-      let x: Message? = try await client.mutation(
+      try await client.mutation(
         name: "messages:send", args: ["author": "iOS User", "body": outgoing])
       outgoing = ""
     }
