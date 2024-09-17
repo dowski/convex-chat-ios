@@ -1,0 +1,15 @@
+{
+  "originHash" : "dfcb49472d2bdf935e74fc1bfda6ca8b83fd559a13910fb1b3d1b05993f9f342",
+  "pins" : [
+    {
+      "identity" : "convex-mobile",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/get-convex/convex-mobile",
+      "state" : {
+        "branch" : "ios",
+        "revision" : "11a5da6d475691ab8e3e6c2e203b39aa1669d0af"
+      }
+    }
+  ],
+  "version" : 3
+}

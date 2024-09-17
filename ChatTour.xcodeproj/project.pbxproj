@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 60;
+	objectVersion = 56;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,6 +12,7 @@
 		AA89993E2C938622003EB908 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA89993D2C938622003EB908 /* Assets.xcassets */; };
 		AA8999412C938622003EB908 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA8999402C938622003EB908 /* Preview Assets.xcassets */; };
 		AA8999492C938669003EB908 /* ConvexMobile in Frameworks */ = {isa = PBXBuildFile; productRef = AA8999482C938669003EB908 /* ConvexMobile */; };
+		AAE5A95B2C9A0A52008C5C0E /* ConvexMobile in Frameworks */ = {isa = PBXBuildFile; productRef = AAE5A95A2C9A0A52008C5C0E /* ConvexMobile */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA8999492C938669003EB908 /* ConvexMobile in Frameworks */,
+				AAE5A95B2C9A0A52008C5C0E /* ConvexMobile in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,6 +89,7 @@
 			name = ChatTour;
 			packageProductDependencies = (
 				AA8999482C938669003EB908 /* ConvexMobile */,
+				AAE5A95A2C9A0A52008C5C0E /* ConvexMobile */,
 			);
 			productName = ChatTour;
 			productReference = AA8999362C938622003EB908 /* ChatTour.app */;
@@ -117,7 +120,7 @@
 			);
 			mainGroup = AA89992D2C938622003EB908;
 			packageReferences = (
-				AA8999472C938669003EB908 /* XCLocalSwiftPackageReference "../../convex-mobile/ios" */,
+				AAE5A9592C9A0A52008C5C0E /* XCRemoteSwiftPackageReference "convex-mobile" */,
 			);
 			productRefGroup = AA8999372C938622003EB908 /* Products */;
 			projectDirPath = "";
@@ -353,16 +356,25 @@
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCLocalSwiftPackageReference section */
-		AA8999472C938669003EB908 /* XCLocalSwiftPackageReference "../../convex-mobile/ios" */ = {
-			isa = XCLocalSwiftPackageReference;
-			relativePath = "../../convex-mobile/ios";
+/* Begin XCRemoteSwiftPackageReference section */
+		AAE5A9592C9A0A52008C5C0E /* XCRemoteSwiftPackageReference "convex-mobile" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/get-convex/convex-mobile";
+			requirement = {
+				branch = ios;
+				kind = branch;
+			};
 		};
-/* End XCLocalSwiftPackageReference section */
+/* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
 		AA8999482C938669003EB908 /* ConvexMobile */ = {
 			isa = XCSwiftPackageProductDependency;
+			productName = ConvexMobile;
+		};
+		AAE5A95A2C9A0A52008C5C0E /* ConvexMobile */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AAE5A9592C9A0A52008C5C0E /* XCRemoteSwiftPackageReference "convex-mobile" */;
 			productName = ConvexMobile;
 		};
 /* End XCSwiftPackageProductDependency section */
