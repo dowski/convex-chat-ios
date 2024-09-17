@@ -12,37 +12,61 @@ import SwiftUI
 let client = ConvexClient(deploymentUrl: "https://sensible-elephant-70.convex.cloud")
 
 struct ContentView: View {
-  @State private var messages: [Message] = []
-  @State private var cancellationHandle: Set<AnyCancellable> = []
-  @State private var outgoing: String = ""
+  @State private var viewModel: ChatViewModel
+
+  init(viewModel: ChatViewModel = ChatViewModel()) {
+    self.viewModel = viewModel
+  }
+
   var body: some View {
     return VStack {
       List {
-        ForEach(messages) { message in
-          Text(message.body)
+        ForEach(viewModel.messages) { message in
+          VStack(alignment: .leading) {
+            Text(message.body)
+            Text(message.author).font(.system(size: 12, weight: .light, design: .default))
+          }
         }
-      }.task {
+      }
+
+      HStack {
+        TextField("", text: $viewModel.outgoing)
+          .border(.secondary)
+        Button(action: {
+          viewModel.sendOutgoing()
+        }) {
+          Text("Send")
+        }
+
+      }
+    }.padding()
+  }
+}
+
+@Observable class ChatViewModel {
+  var messages: [Message] = []
+  var outgoing: String = ""
+  private var cancellationHandle: Set<AnyCancellable> = []
+
+  init(messages: [Message]? = nil) {
+    if let providedMessages = messages {
+      self.messages = providedMessages
+    } else {
+      Task {
         try! await client.subscribe(name: "messages:list")
           .replaceError(with: [Message(id: "id", author: "None", body: "None")])
           .receive(on: DispatchQueue.main)
           .assign(to: \.messages, on: self)
           .store(in: &cancellationHandle)
       }
-      .padding()
-      HStack {
-        TextField("", text: $outgoing)
-          .border(.secondary)
-        Button(action: {
-          Task {
-            let x: Message? = try await client.mutation(
-              name: "messages:send", args: ["author": "iOS User", "body": outgoing])
-            outgoing = ""
-          }
-        }) {
-          Text("Send")
-        }
+    }
+  }
 
-      }
+  func sendOutgoing() {
+    Task {
+      let x: Message? = try await client.mutation(
+        name: "messages:send", args: ["author": "iOS User", "body": outgoing])
+      outgoing = ""
     }
   }
 }
@@ -60,5 +84,9 @@ struct Message: Identifiable, Decodable {
 }
 
 #Preview {
-  ContentView()
+  let fakeData = ChatViewModel(messages: [
+    Message(id: "a", author: "Foo", body: "Hi!"),
+    Message(id: "b", author: "Bar", body: "Hey there!"),
+  ])
+  ContentView(viewModel: fakeData)
 }
