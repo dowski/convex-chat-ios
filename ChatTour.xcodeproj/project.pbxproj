@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -11,6 +11,7 @@
 		AA89993C2C938622003EB908 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA89993B2C938622003EB908 /* ContentView.swift */; };
 		AA89993E2C938622003EB908 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA89993D2C938622003EB908 /* Assets.xcassets */; };
 		AA8999412C938622003EB908 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA8999402C938622003EB908 /* Preview Assets.xcassets */; };
+		AA8999492C938669003EB908 /* ConvexMobile in Frameworks */ = {isa = PBXBuildFile; productRef = AA8999482C938669003EB908 /* ConvexMobile */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA8999492C938669003EB908 /* ConvexMobile in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +85,9 @@
 			dependencies = (
 			);
 			name = ChatTour;
+			packageProductDependencies = (
+				AA8999482C938669003EB908 /* ConvexMobile */,
+			);
 			productName = ChatTour;
 			productReference = AA8999362C938622003EB908 /* ChatTour.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +116,9 @@
 				Base,
 			);
 			mainGroup = AA89992D2C938622003EB908;
+			packageReferences = (
+				AA8999472C938669003EB908 /* XCLocalSwiftPackageReference "../../convex-mobile/ios" */,
+			);
 			productRefGroup = AA8999372C938622003EB908 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -344,6 +352,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		AA8999472C938669003EB908 /* XCLocalSwiftPackageReference "../../convex-mobile/ios" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = "../../convex-mobile/ios";
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		AA8999482C938669003EB908 /* ConvexMobile */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = ConvexMobile;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = AA89992E2C938622003EB908 /* Project object */;
 }
