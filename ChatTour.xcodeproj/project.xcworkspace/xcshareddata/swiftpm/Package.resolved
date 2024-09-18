@@ -1,13 +1,49 @@
 {
-  "originHash" : "dfcb49472d2bdf935e74fc1bfda6ca8b83fd559a13910fb1b3d1b05993f9f342",
+  "originHash" : "3cf249eab5fbc3a356e3cfad2580f387798c4549235e54675f104eeeb860565f",
   "pins" : [
     {
-      "identity" : "convex-mobile",
+      "identity" : "auth0.swift",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/get-convex/convex-mobile",
+      "location" : "https://github.com/auth0/Auth0.swift",
       "state" : {
-        "branch" : "ios",
-        "revision" : "f27627f1f57a96b76229a58e8c67587b5244ceff"
+        "revision" : "0d9c3f3241e3defad065409ac3a071ee1c5a7e8a",
+        "version" : "2.9.0"
+      }
+    },
+    {
+      "identity" : "convex-swift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/dowski/convex-swift",
+      "state" : {
+        "revision" : "ce2cc7911cf2178ee4a3fb0a12691ab887a60f72",
+        "version" : "0.1.0"
+      }
+    },
+    {
+      "identity" : "convex-swift-auth0",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/dowski/convex-swift-auth0",
+      "state" : {
+        "revision" : "bee44c66bd74d4e4f19b8ba687af84da2c903f5b",
+        "version" : "0.1.1"
+      }
+    },
+    {
+      "identity" : "jwtdecode.swift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/auth0/JWTDecode.swift.git",
+      "state" : {
+        "revision" : "1e153ef009969543191970c66b7c60163c0b4a65",
+        "version" : "3.2.0"
+      }
+    },
+    {
+      "identity" : "simplekeychain",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/auth0/SimpleKeychain.git",
+      "state" : {
+        "revision" : "b694f155907b189bc82e93586695a26f558c742f",
+        "version" : "1.2.0"
       }
     }
   ],

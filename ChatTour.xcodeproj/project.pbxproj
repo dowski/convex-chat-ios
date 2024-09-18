@@ -7,15 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA4942A72C9B539E007111CB /* ConvexMobile in Frameworks */ = {isa = PBXBuildFile; productRef = AA4942A62C9B539E007111CB /* ConvexMobile */; };
+		AA4942AC2C9B5554007111CB /* Auth0.plist in Resources */ = {isa = PBXBuildFile; fileRef = AA4942AB2C9B554D007111CB /* Auth0.plist */; };
+		AA4942AF2C9B578B007111CB /* ConvexAuth0 in Frameworks */ = {isa = PBXBuildFile; productRef = AA4942AE2C9B578B007111CB /* ConvexAuth0 */; };
+		AA4942B22C9B8387007111CB /* ConvexMobile in Frameworks */ = {isa = PBXBuildFile; productRef = AA4942B12C9B8387007111CB /* ConvexMobile */; };
+		AA4942B52C9B84C9007111CB /* ConvexAuth0 in Frameworks */ = {isa = PBXBuildFile; productRef = AA4942B42C9B84C9007111CB /* ConvexAuth0 */; };
 		AA89993A2C938622003EB908 /* ChatTourApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8999392C938622003EB908 /* ChatTourApp.swift */; };
 		AA89993C2C938622003EB908 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA89993B2C938622003EB908 /* ContentView.swift */; };
 		AA89993E2C938622003EB908 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA89993D2C938622003EB908 /* Assets.xcassets */; };
 		AA8999412C938622003EB908 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA8999402C938622003EB908 /* Preview Assets.xcassets */; };
 		AA8999492C938669003EB908 /* ConvexMobile in Frameworks */ = {isa = PBXBuildFile; productRef = AA8999482C938669003EB908 /* ConvexMobile */; };
-		AAE5A95B2C9A0A52008C5C0E /* ConvexMobile in Frameworks */ = {isa = PBXBuildFile; productRef = AAE5A95A2C9A0A52008C5C0E /* ConvexMobile */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AA4942AB2C9B554D007111CB /* Auth0.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Auth0.plist; sourceTree = "<group>"; };
 		AA8999362C938622003EB908 /* ChatTour.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChatTour.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA8999392C938622003EB908 /* ChatTourApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTourApp.swift; sourceTree = "<group>"; };
 		AA89993B2C938622003EB908 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -28,8 +33,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA4942AF2C9B578B007111CB /* ConvexAuth0 in Frameworks */,
 				AA8999492C938669003EB908 /* ConvexMobile in Frameworks */,
-				AAE5A95B2C9A0A52008C5C0E /* ConvexMobile in Frameworks */,
+				AA4942A72C9B539E007111CB /* ConvexMobile in Frameworks */,
+				AA4942B52C9B84C9007111CB /* ConvexAuth0 in Frameworks */,
+				AA4942B22C9B8387007111CB /* ConvexMobile in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -55,6 +63,7 @@
 		AA8999382C938622003EB908 /* ChatTour */ = {
 			isa = PBXGroup;
 			children = (
+				AA4942AB2C9B554D007111CB /* Auth0.plist */,
 				AA8999392C938622003EB908 /* ChatTourApp.swift */,
 				AA89993B2C938622003EB908 /* ContentView.swift */,
 				AA89993D2C938622003EB908 /* Assets.xcassets */,
@@ -89,7 +98,10 @@
 			name = ChatTour;
 			packageProductDependencies = (
 				AA8999482C938669003EB908 /* ConvexMobile */,
-				AAE5A95A2C9A0A52008C5C0E /* ConvexMobile */,
+				AA4942A62C9B539E007111CB /* ConvexMobile */,
+				AA4942AE2C9B578B007111CB /* ConvexAuth0 */,
+				AA4942B12C9B8387007111CB /* ConvexMobile */,
+				AA4942B42C9B84C9007111CB /* ConvexAuth0 */,
 			);
 			productName = ChatTour;
 			productReference = AA8999362C938622003EB908 /* ChatTour.app */;
@@ -120,7 +132,8 @@
 			);
 			mainGroup = AA89992D2C938622003EB908;
 			packageReferences = (
-				AAE5A9592C9A0A52008C5C0E /* XCRemoteSwiftPackageReference "convex-mobile" */,
+				AA4942B02C9B8387007111CB /* XCRemoteSwiftPackageReference "convex-swift" */,
+				AA4942B32C9B84C9007111CB /* XCRemoteSwiftPackageReference "convex-swift-auth0" */,
 			);
 			productRefGroup = AA8999372C938622003EB908 /* Products */;
 			projectDirPath = "";
@@ -137,6 +150,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA8999412C938622003EB908 /* Preview Assets.xcassets in Resources */,
+				AA4942AC2C9B5554007111CB /* Auth0.plist in Resources */,
 				AA89993E2C938622003EB908 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -357,24 +371,45 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		AAE5A9592C9A0A52008C5C0E /* XCRemoteSwiftPackageReference "convex-mobile" */ = {
+		AA4942B02C9B8387007111CB /* XCRemoteSwiftPackageReference "convex-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/get-convex/convex-mobile";
+			repositoryURL = "https://github.com/dowski/convex-swift";
 			requirement = {
-				branch = ios;
-				kind = branch;
+				kind = upToNextMinorVersion;
+				minimumVersion = 0.1.0;
+			};
+		};
+		AA4942B32C9B84C9007111CB /* XCRemoteSwiftPackageReference "convex-swift-auth0" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/dowski/convex-swift-auth0";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.1.1;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		AA8999482C938669003EB908 /* ConvexMobile */ = {
+		AA4942A62C9B539E007111CB /* ConvexMobile */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = ConvexMobile;
 		};
-		AAE5A95A2C9A0A52008C5C0E /* ConvexMobile */ = {
+		AA4942AE2C9B578B007111CB /* ConvexAuth0 */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = AAE5A9592C9A0A52008C5C0E /* XCRemoteSwiftPackageReference "convex-mobile" */;
+			productName = ConvexAuth0;
+		};
+		AA4942B12C9B8387007111CB /* ConvexMobile */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AA4942B02C9B8387007111CB /* XCRemoteSwiftPackageReference "convex-swift" */;
+			productName = ConvexMobile;
+		};
+		AA4942B42C9B84C9007111CB /* ConvexAuth0 */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AA4942B32C9B84C9007111CB /* XCRemoteSwiftPackageReference "convex-swift-auth0" */;
+			productName = ConvexAuth0;
+		};
+		AA8999482C938669003EB908 /* ConvexMobile */ = {
+			isa = XCSwiftPackageProductDependency;
 			productName = ConvexMobile;
 		};
 /* End XCSwiftPackageProductDependency section */
