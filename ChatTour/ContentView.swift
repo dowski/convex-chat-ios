@@ -13,7 +13,8 @@ import JWTDecode
 import SwiftUI
 
 let client = ConvexClientWithAuth(
-  deploymentUrl: "https://sensible-elephant-70.convex.cloud", authProvider: Auth0Provider())
+  deploymentUrl: "https://sensible-elephant-70.convex.cloud",
+  authProvider: Auth0Provider(enableCachedLogins: true))
 
 struct ContentView: View {
   @State private var viewModel = AuthViewModel()
@@ -103,6 +104,9 @@ struct LoginScreen: View {
       .receive(on: DispatchQueue.main)
       .assign(to: \.authState, on: self)
       .store(in: &cancellationHandle)
+    Task {
+      await client.loginFromCache()
+    }
   }
 
   func login() {
